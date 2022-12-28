@@ -1,5 +1,5 @@
 # Password-generator
 creates a password based where the user can choose the length and characters to be included
 
-![alt text](\images\screenshot-password.jpg)
+![alt text](images/screenshot-password.png)
 
