@@ -1,0 +1,313 @@
+:root {
+    --darkgrey: #24232C;
+    --grey: #817D92;
+    --white: #E6E5EA;
+    --black: #18171f;
+    --green: #a4ffaf;
+    --red: #f64a4a;
+    --orange: #fb7c58;
+    --yellow: #f8cd65;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Jetbrains Mono';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.hidden {
+  visibility: hidden;
+}
+/*heading*/
+.lheading {
+    font-size: 32px;
+    line-height: 43px;
+}
+.mheading {
+    font-size: 24px;
+    line-height: 31px;
+}
+.container {
+    width: 540px;
+    height: auto;
+    margin: 55px auto;
+}
+h1 {
+    text-align: center;
+    color: var(--grey);
+    margin-bottom: 51px;
+}
+.pass-gen {
+  display: flex;
+  flex-direction: row;
+  color: var(--grey);
+  background-color: var(--darkgrey);
+  width: 100%;
+  height: 80px;
+  margin-bottom: 24px;
+  padding:  19px 23px;
+}
+h2 {
+  
+  width: 78%;
+
+}
+.copied {
+  margin: 13px 10px 0 0;
+color: var(--green);
+}
+.copy {
+  margin-top: 10px;
+  width: 25px;
+  height: 25px;
+  
+}
+.copy:hover {
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+}
+.password-setting {
+    background-color: var(--darkgrey);
+    padding: 24px 32px;
+}
+/*sldier*/
+.rangetext {
+  display: flex;
+  flex-direction: row;
+}
+.rangeTitle{
+  width: 173px;
+}
+#rangeValue {
+  margin-left: 264px;
+  color: var(--green);
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  margin-bottom:32px;
+  width: 100%;
+  height: 8px;
+  background-color: var(--grey);
+  border-radius: 5px;
+  background-image: linear-gradient(var(--green), var(--green));
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  background: var(--white);
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: var(--black);
+  border-color: var(--green);
+}
+
+input[type=range]::-webkit-slider-runnable-track  {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+/*checkbox*/
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+}
+.checkbox-container div {
+  margin-bottom: 20px;
+}
+.check-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: var(--darkgrey);
+  border: 3px solid var(--white);
+}
+
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~ .checkmark {
+  border-color: var(--green);
+}
+
+/* When the checkbox is checked, add a blue background */
+.check-container input:checked ~ .checkmark {
+  background-color: var(--green);
+  border: 0;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.check-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.check-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--black);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.passStrength {
+  height: 72px;
+  margin: 12px 0 32px 0;
+  width: 100%;
+  padding: 22px 0;
+  background-color: var(--black);
+  color: var(--grey);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.box-container {
+  display: flex;
+  direction: row;
+  padding-right: 20px;
+}
+.passStrength p:first-of-type {
+  margin: 3px 0 0 32px;
+}
+.strength {
+  color: var(--white);
+}
+.box {
+  border: 2px solid var(--grey);
+  width: 10px;
+  height: 28px;
+  margin-right: 8px;
+}
+.fill-box {
+  background-color: var(--yellow);
+  border: 0;
+}
+/*button*/
+button {
+  width: 100%;
+  height: 65px;
+  background-color: var(--green);
+  color: var(--black);
+}
+button:hover {
+  background-color: var(--darkgrey);
+  color: var(--green);
+  border-color: var(--green);
+  cursor: pointer;
+}
+button:hover .my-svg {
+  filter: invert(85%) sepia(34%) saturate(422%) hue-rotate(68deg) brightness(102%) contrast(101%);
+}
+button img {
+  display: inline;
+  margin-left: 24px;
+}
+
+
+
